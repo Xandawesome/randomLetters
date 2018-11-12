@@ -1,27 +1,10 @@
 <html>
+	<head>
+		<script type="text/javascript" src="script.js"></script>
+	</head>
 	<body>
 		<p>What you see below you is a completely random string of letters changing by the millisecond. Obviously the chances you will get something comprehensible is extremely low but stop it whenever you want and see what you can get.</p>
 		<p id="text_message"></p>
 		<button onclick="stop()">Stop!</button>
 	</body>
 </html>
-
-<script>
-	var messages = ["The hackers were me and Tudor"];
-	var message = messages[Math.floor(Math.random() * messages.length)]
-	var randomChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
-	var randomStringInterval = setInterval(randomString, 10);
-	
-	function randomString() {
-		document.getElementById("text_message").innerHTML = ""; 
-		for (i = 0; i < message.length; i++) {
-			document.getElementById("text_message").innerHTML += randomChars[Math.floor(Math.random() * randomChars.length)];
-		}
-	}
-	
-	function stop() {
-		clearInterval(randomStringInterval);
-		document.getElementById("text_message").innerHTML = message; 
-	}
-</script>
